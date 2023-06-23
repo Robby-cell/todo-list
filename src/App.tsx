@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import Todo from "./Todo";
+// import Todo from "./Todo";
 import { TodoItem } from "./Todo";
 import TodoForm from "./TodoForm";
 import { MouseEvent } from "react";
+import "./App.css";
 
 function App() {
   const [todos, setTodo] = useState(() => {
@@ -47,31 +48,36 @@ function App() {
   };
 
   return (
-    <>
-      <TodoForm itemAdd={addTodo} content={newItem} update={updateNewItem} />
-      {!todos.length && <h1>No TODOs found.</h1>}
-      {todos.map((todo: TodoItem) => {
-        //<Todo title={todo.what} completed={todo.completed} />;
-        return (
-          <li key={todo.id}>
-            <label>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={(e) => handleButton(todo.id, e.target.checked)}
-              />
-              {todo.what}
-            </label>
-            <button
-              className="btn btn-danger"
-              onClick={() => deleteTodo(todo.id)}
-            >
-              Delete
-            </button>
-          </li>
-        );
-      })}
-    </>
+    <div className="app">
+      <div className="todo-app">
+        <TodoForm itemAdd={addTodo} content={newItem} update={updateNewItem} />
+
+        <div className="todo-container">
+          {!todos.length && <h1>No TODOs found.</h1>}
+          {todos.map((todo: TodoItem) => {
+            //<Todo title={todo.what} completed={todo.completed} />;
+            return (
+              <li key={todo.id} className="todo-item">
+                <label className="todo-content">
+                  <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={(e) => handleButton(todo.id, e.target.checked)}
+                  />
+                  {todo.what}
+                </label>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteTodo(todo.id)}
+                >
+                  Delete
+                </button>
+              </li>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -10,22 +10,23 @@ class TodoItem {
   }
 }
 
-interface Props {
-  title: string;
-  completed: boolean;
-}
-
-const Todo = function ({ title, completed }: Props) {
-  return (
-    <li>
-      <label>
-        <input type="checkbox" checked={completed} />
-        {title}
-      </label>
-      <button className="btn btn-danger">Delete</button>
-    </li>
-  );
-};
-
 export { TodoItem };
-export default Todo;
+
+// interface Props {
+//   title: string;
+//   completed: boolean;
+// }
+
+// const Todo = function ({ title, completed }: Props) {
+//   return (
+//     <li>
+//       <label>
+//         <input type="checkbox" checked={completed} />
+//         {title}
+//       </label>
+//       <button className="btn btn-danger">Delete</button>
+//     </li>
+//   );
+// };
+
+// export default Todo;

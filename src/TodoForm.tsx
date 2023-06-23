@@ -18,7 +18,7 @@ const TodoForm = ({ content, update, itemAdd }: Props) => {
           onChange={(e) => update(e.target.value)}
         />
       </div>
-      <button className="btn" onClick={(e) => itemAdd(e)}>
+      <button className="form-btn" onClick={(e) => itemAdd(e)}>
         Add
       </button>
     </form>
