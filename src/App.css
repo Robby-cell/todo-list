@@ -64,11 +64,15 @@ body {
     display: grid;
     grid-template-columns: 2fr 0.8fr 0.8fr 2.4fr;
     width: 40rem;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.3rem;
 }
 
 .no-todo-found {
     width: 40rem;
     margin-bottom: 20%;
+    margin-top: 0rem;
 }
 
 .todo-container {

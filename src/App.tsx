@@ -77,9 +77,9 @@ function App() {
 
         <div className="done-undone">
           <div className="todo-container">
-            <p className="todo-info">Todos</p>
+            <h2 className="todo-info">Todos</h2>
             {!todos.length && (
-              <h1 className="no-todo-found">No TODOs found.</h1>
+              <h3 className="no-todo-found">No TODOs found.</h3>
             )}
             {todos.map((todo: TodoItem) => {
               //<Todo title={todo.what} completed={todo.completed} />;
@@ -116,7 +116,7 @@ function App() {
           </div>
 
           <div className="done-container">
-            <p className="todo-info">Done Todos</p>
+            <h2 className="todo-info">Done Todos</h2>
             {done.map((todo: TodoItem) => {
               return (
                 <li key={todo.id} className="done-item">
